@@ -4,8 +4,8 @@ const pokemonNumber = 150;
 const colors = {
   fire: "#FDDFDF",
   grass: "#DEFDE0",
-  electric: "#FCF7DE",
-  water: "#f4e7da",
+  electric: "#e3b520",
+  water: "#1ea8e8",
   rock: "#d5d5d4",
   fairy: "#fceaff",
   poison: "#98d7a5",
@@ -54,10 +54,10 @@ function createPokemonCard(pokemon) {
   </div>
   <div class="info">
     <span class="number">#${pokemon.id.toString().padStart(3, "0")}</span>
-    <h3 class="name>${name}</h3>
-    <small class="type">Type:  <span>${type}</span></small>
+    <h3 class="name">${name}</h3>
+    <small class="type">Type: <span>${type}</span></small>
   </div>
-  ${name}`;
+  `;
 
   pokemonElement.innerHTML = pokeInnerHTML;
 
