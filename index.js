@@ -41,15 +41,20 @@ function createPokemonCard(pokemon) {
   const pokemonTypes = pokemon.types.map((element) => element.type.name);
   const type = mainTypes.find((type) => pokemonTypes.indexOf(type) > -1);
   const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+  const color = colors[type];
+
+  pokemonElement.style.backgroundColor = color;
 
   const pokeInnerHTML = `
   <div class="img-container">
-   <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png">
+   <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+     pokemon.id
+   }.png">
 
   </div>
   <div class="info">
-    <span class="number">${pokemon.id}</span>
-    <h3> class="name>${name}</h3>
+    <span class="number">#${pokemon.id.toString().padStart(3, "0")}</span>
+    <h3 class="name>${name}</h3>
     <small class="type">Type:  <span>${type}</span></small>
   </div>
   ${name}`;
