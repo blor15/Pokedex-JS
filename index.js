@@ -1,20 +1,24 @@
 const pokeContainer = document.getElementById("poke_container");
-const pokemonNumber = 150;
+const pokemonNumber = 251;
 
+// Colors are used for the Pokemon typing
 const colors = {
   fire: "#FDDFDF",
-  grass: "#DEFDE0",
+  grass: "#2ff736",
   electric: "#e3b520",
   water: "#1ea8e8",
-  rock: "#d5d5d4",
+  ground: "#9c5636",
   fairy: "#fceaff",
   poison: "#98d7a5",
-  bug: "#f8d5a3",
+  bug: "#83f00e",
   dragon: "#97b3e6",
-  psyhic: "#eaeda1",
+  psychic: "#ca44db",
   flying: "#F5F5F5",
   fighting: "#E6E0D4",
   normal: "#F5F5F5",
+  rock: "#6e4401",
+  dark: "#3d3933",
+  ghost: "#77588c",
 };
 
 const mainTypes = Object.keys(colors);
@@ -40,6 +44,7 @@ function createPokemonCard(pokemon) {
 
   const pokemonTypes = pokemon.types.map((element) => element.type.name);
   const type = mainTypes.find((type) => pokemonTypes.indexOf(type) > -1);
+  console.log(type);
   const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
   const color = colors[type];
 

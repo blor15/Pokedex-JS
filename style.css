@@ -4,8 +4,8 @@
 
 body {
     background:#EFEFBB;
-    background: -webkit-linear-gradient(to right, #D4D3DD, #EFEFBB);;
-    background: linear-gradient(to right, #D4D3DD, #EFEFBB);
+    background: -webkit-linear-gradient(to right, #fcfcfc, #f0210e);;
+    background: linear-gradient(to right, #fcfcfc, #f0210e);
     display: flex;
     flex-direction: column;
     align-items: center;
