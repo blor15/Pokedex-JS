@@ -30,10 +30,9 @@ const fetchPokemons = async () => {
 };
 
 const getPokemon = async (id) => {
-  const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
-  const res = await fetch(url);
-  const pokemon = await res.json();
-  createPokemonCard(pokemon);
+  fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+    .then((response) => response.json())
+    .then(createPokemonCard);
 };
 
 fetchPokemons();
@@ -44,7 +43,6 @@ function createPokemonCard(pokemon) {
 
   const pokemonTypes = pokemon.types.map((element) => element.type.name);
   const type = mainTypes.find((type) => pokemonTypes.indexOf(type) > -1);
-  console.log(type);
   const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
   const color = colors[type];
 
